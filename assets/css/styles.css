@@ -490,8 +490,13 @@ input, button, textarea {
 
 .button-fill {
     position: relative;
-    outline: 2px solid var(--dark-color);
+    /* outline: 2px solid var(--dark-color); */
+    overflow: hidden;
     transition: color .25s;
+}
+
+.button-fill:hover, .button-fill:focus {
+    color: var(--light-color);
 }
 
 .button-fill::before {
@@ -504,6 +509,7 @@ input, button, textarea {
     left: 0;
     z-index: -1;
     transform: scale(0);
+    transform-origin: middle; /* bottom left */
     transition: transform .5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 
